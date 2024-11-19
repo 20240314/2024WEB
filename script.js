@@ -5,13 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // locType별 아이콘 색상 설정
     const markerColors = {
-        cafe: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-        playground: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-        restaurant: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-        station: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
-        stay: "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
-        store: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png"
+        cafe: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+        playground: "https://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+        restaurant: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+        station: "https://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+        stay: "https://maps.google.com/mapfiles/ms/icons/orange-dot.png",
+        store: "https://maps.google.com/mapfiles/ms/icons/pink-dot.png"
     };
+    
 
     function fetchPlaceDetails(map, marker, location, infowindow) {
         const service = new google.maps.places.PlacesService(map);
