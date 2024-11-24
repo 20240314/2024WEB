@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>여행 계획</title>
+    <link rel="stylesheet" href="planScript.css">
+    <script defer src="planScript.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDFLd0WMItotNUnvJA3YwZRv9lpdFnyPs&libraries=places&callback=initMap"></script>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <h1>여행 계획 페이지</h1>
+        <nav>main.html
+            <ul>
+                <li><a href="main.html">메인 페이지</a></li>
+                <li><a href="info.html">드라마/영화 정보</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main>
+        <section id="map-section">
+            <h2>여행 계획 지도</h2>
+            <div id="map" style="height: 800px;"></div>
+        </section>
+    </main>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <p>&copy; 2024 촬영지 여행 코스 추천.</p>
+    </footer>
+</body>
+</html>
