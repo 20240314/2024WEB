@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap'); /* 귀여운 폰트 */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Jua', sans-serif; /* 기본 폰트를 귀여운 폰트로 설정 */
+    font-size: 40px;
+    overflow: hidden; /* 스크롤 제거 */
+    background: linear-gradient(135deg, #FFDEE9, #B5FFFC); /* 따뜻한 배경색 */
+}
+
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/1.png') no-repeat center center/cover;
+    z-index: 10;
+    opacity: 1; /* 투명도 */
+    transition: opacity 1.5s ease; /* 페이드아웃 효과 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: changeBackground 20s infinite;
+}
+
+.intro-content {
+    position: absolute;
+    bottom: 15%; /* 화면의 중앙 아래쪽에 위치 */
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.start-button {
+    background-color: skyblue; /* 코랄 색상 */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px; /* 둥글둥글한 버튼 */
+    font-size: 40px;
+    font-family: 'Jua', sans-serif; /* 버튼에도 귀여운 폰트 적용 */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: skyblue; /* 더 진한 코랄색으로 변경 */
+    transform: scale(2); /* 버튼 크기 확대 (적당히) */
+}
+
+.hidden {
+    display: none;
+}
+
+.main-content {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1s forwards; /* 페이드 인 애니메이션 */
+    background: rgba(255, 255, 255, 0.9); /* 흰색 반투명 배경 */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+    margin: 0 auto;
+    max-width: 1000px; /* 배경 너비 축소 */
+    max-height: 80%; /* 배경 최대 높이 */
+    overflow: auto; /* 스크롤 가능 */
+    font-size: 1.5rem; /* 기본 폰트 크기 축소 */
+}
+
+/* 제목 스타일 */
+#main-title {
+    font-size: 1.8rem; /* 제목 폰트 크기 축소 */
+    font-weight: bold;
+    color: #FF6F61;
+    margin-bottom: 10px;
+}
+
+#main-title .highlight {
+    color: #FFB300;
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: 1.2rem; /* 부제목 폰트 크기 축소 */
+    color: #FF6F61;
+    margin-bottom: 15px;
+}
+
+#description {
+    font-size: 0.9rem; /* 내용 폰트 크기 축소 */
+    line-height: 1.6; /* 줄 간격 조정 */
+    color: #333;
+    white-space: pre-wrap; /* 줄바꿈 유지 */
+    margin-top: 10px;
+    overflow: hidden;
+    max-width: 100%;
+    text-align: left;
+    padding: 15px; /* 적당한 여백 */
+}
+
+/* 타이핑 커서 깜박이는 효과 */
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: #FF6F61;
+    }
+}
+
+/* 타이핑 애니메이션 */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#go-to-index {
+    position: fixed; /* 화면에 고정 */
+    bottom: 20px; /* 아래쪽 위치 */
+    right: 20px; /* 오른쪽 위치 */
+    padding: 10px 15px;
+    font-size: 0.9rem; /* 버튼 폰트 크기 축소 */
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 100; /* 다른 요소 위에 위치 */
+}
+
+#go-to-index:hover {
+    background-color: #FF4D4D; /* 버튼 호버 색상 변경 */
+}

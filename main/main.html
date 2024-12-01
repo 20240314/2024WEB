@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>오늘 하루, 영화처럼</title>
+    <link rel="stylesheet" href="mainStyle.css">
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <h1>오늘 하루, 영화처럼</h1>
+        <!-- 네비게이션 바 -->
+        <nav>
+            <ul>
+                <li><a href="../plan/plan.html">여행 계획</a></li>
+                <li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+                <li><a href="../info/info.html">드라마/영화 종류</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main>
+        <!-- 지도 영역 -->
+        <section id="map-section">
+            <h2>여행 촬영지 지도</h2>
+            <div id="map"></div>
+        </section>
+
+        <!-- 범례 섹션 -->
+        <!-- 범례 섹션 (버튼 추가) -->
+        <section id="locType-section">
+            <div id="filter-buttons">
+                <button id="all-btn">All</button>
+                <button id="cafe-btn">Cafe</button>
+                <button id="playground-btn">Playground</button>
+                <button id="restaurant-btn">Restaurant</button>
+                <button id="station-btn">Station</button>
+                <button id="stay-btn">Stay</button>
+                <button id="store-btn">Store</button>
+            </div>
+            <ul id="locType">
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="cafe">Cafe</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/yellow-dot.png" alt="playground">Playground</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="restaurant">Restaurant</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/purple-dot.png" alt="station">Station</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/orange-dot.png" alt="stay">Stay</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/pink-dot.png" alt="store">Store</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <p>&copy; 2024 촬영지 여행 코스 추천.</p>
+    </footer>
+    <script async defer src="mainScript.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDFLd0WMItotNUnvJA3YwZRv9lpdFnyPs&libraries=places&callback=initMap"></script>
+</body>
+</html>

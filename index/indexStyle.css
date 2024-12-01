@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap'); /* 귀여운 폰트 */
+
+body {
+    margin: 0;
+    height: 6000px;
+    font-family: "Dongle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    color: white;
+    font-size: 10em;
+    position: absolute;
+    top: 70px;
+    left: 120px;
+}
+
+#cover {
+    height: 1200px;
+    background-image: url(test02_img01.jpg);
+    background-size: 100% 100%;
+    position: relative;
+}
+
+#cover::before {  /* 수정된 선택자 */
+    content: "";
+    background: linear-gradient(to top, white, transparent);  /* 그라데이션 */
+    position: absolute;
+    height: 100%;  /* section의 높이에 맞게 */
+    width: 100%;
+    top: 0;  /* section의 상단에 맞춰 위치 */
+    display: flex;  /* flexbox 레이아웃을 사용 */
+    justify-content: flex-start;  /* 텍스트는 왼쪽에 배치 */
+    align-items: center;  /* 수직 중앙 정렬 */
+}
+
+#intro {
+    position: relative;
+    top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 수직 중앙 정렬 */
+    background: linear-gradient(to bottom, white, #b0d9df, white);  /* 그라데이션 */;
+    
+    padding: 200px;
+}
+
+#intro h1 {
+    color: rgba(71, 111, 112, 0.7);
+    left: 500px;
+    font-size: 4em;
+    animation: pulse 3s infinite;
+    margin-right: 20px;  /* 이미지와의 간격을 50px로 설정 */
+    flex-shrink: 0;
+}
+
+#description {
+    display: block;
+    position: relative;
+    width: 1100px;
+    top: 80px;
+    left: -250px;
+    font-size: 3.7em;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+#intro img {
+    position: absolute;
+    height: 600px;
+    width: 550px;  
+    margin-left: 1300px;
+    border-radius: 20px;
+    box-shadow: 30px 30px 30px rgba(176, 217, 223, 0.9);
+}
+
+#last {
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 200px;
+}
+
+
+#go-to-main {
+
+    top: 400px;
+    position: relative;
+    align-items: center;
+    padding: 40px 60px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(54, 152, 187, 0.4);
+    border: none;
+    border-radius: 30px;
+    font-family: 'Jua', sans-serif; 
+    box-shadow: 0 0 20px rgb(162, 218, 240), 0 0 30px rgb(162, 218, 240), 0 0 40px rgb(162, 218, 240);
+    text-shadow: 0 0 10px rgb(162, 218, 240);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#go-to-main i {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+#go-to-main:hover i {
+    transform: scale(1.2);
+}
+
+#go-to-main:hover {
+    box-shadow: 0 0 30px #00eaff, 0 0 40px #00eaff, 0 0 50px #00eaff;
+}
+
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slide {
+    from {
+        left: -100px;
+        opacity: 0;
+    }
+    to {
+        left: 120px;
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        left: 120px;
+        opacity: 1;
+    }
+    to {
+        left: -100px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #b0d9df;
+        border-radius: 10px;    
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px #b0d9df;
+        border-radius: 10px;    
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #b0d9df;
+        border-radius: 10px;    
+    }
+}
