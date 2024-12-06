@@ -3,8 +3,8 @@
 
 body, html {
     font-family: 'Jua', sans-serif; /* 기본 폰트를 귀여운 폰트로 설정 */
-    background: linear-gradient(135deg, #FFDEE9, #B5FFFC); /* 따뜻한 배경색 */
-    height: 99%;
+    background: linear-gradient(135deg, #FFDEE9, #B5FFFC) cover; /* 따뜻한 배경색 */
+    width: 100%;
 }
 
 h1 {
@@ -17,8 +17,8 @@ h1 {
 }
 #map {
     display: block;
-    height: 800px;
-    width: 1200px; /* Set to 100% to be responsive */
+    height: 600px;
+    width: 1000px; /* Set to 100% to be responsive */
     background-color: rgb(211, 211, 211); /* 임시 배경색 (테스트용) */
     margin: 0 auto; /* 중앙 정렬 */
 }

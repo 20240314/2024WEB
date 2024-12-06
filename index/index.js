@@ -12,7 +12,7 @@ window.addEventListener("scroll", function(){
 let first_img = document.querySelector("#intro");
 window.addEventListener("scroll", function(){
     let value = window.scrollY;
-    if(value > 1200 && value < 1700){
+    if(value > 1200 && value < 1850){
         first_img.style.animation = "fadein 1.5s forwards"; 
     } else {
         first_img.style.animation = "fadeout 1.5s forwards";
@@ -28,32 +28,47 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const description = document.getElementById("description");
-//     const goToIndexButton = document.getElementById("go-to-index");
+  new TypeIt(".typingText", {
+    strings: ["총 1027개의 영화, 드라마, 프로그램의 촬영지", "15000여개의 데이터 기반 여행지 코스 추천", "만족스러운 여행이 되시길 바랍니다." ],
+    speed: 30,
+    loop: true, // 반복 여부
+  })
+  .go();
 
-//     const content = `
-// "오늘 하루, 영화처럼"은 단순한 여행 계획을 넘어, 당신의 일상을 영화와 드라마 속 주인공의 여정으로 
-// 물들입니다. 촬영지 지도와 정보를 제공하여, 좋아하는 영화나 드라마의 장면 속 장소를 직접 걸으며,
-// 마치 한 편의 이야기를 새롭게 써내려가는 경험을 선사합니다. 자신이 사랑했던 이야기의 주인공이 되어,
-// 그들의 감정을 느끼고 그들의 발자취를 따라 특별한 하루를 만들어보세요. 당신의 여정이 영화처럼 아름다운 순간들로 가득 차길 바랍니다.
-// `;
 
-//     let i = 0;
+  new TypeIt(".neon-content", {
+    strings: ["영화 속으로", "떠나봅시다."],
+    typeSpeed: 150, // 타이핑 속도 조절
+    deleteSpeed: 50, // 지우는 속도
+    loop: true, // 반복 여부
+  })
+  .go();
 
-//     function typeEffect() {
-//         if (i < content.length) {
-//             description.textContent += content[i];
+window.addEventListener('DOMContentLoaded', function() {
+    var scrollingText = document.querySelector('.scrolling-text');
+    var scrollingTextWidth = scrollingText.clientWidth;
+    var containerWidth = scrollingText.parentElement.clientWidth;
 
-//             // 띄어쓰기에서는 잠시 멈춤
-//             const delay = content[i] === " " ? 100 : 50; // 띄어쓰기는 200ms, 나머지는 100ms
-//             i++;
-//             setTimeout(typeEffect, delay); // 다음 글자 출력
-//         } else {
-//             // 타이핑이 끝난 후 버튼 표시
-//             goToIndexButton.classList.remove("hidden"); // hidden 클래스 제거
-//         }
-//     }
+    // 애니메이션 지속 시간을 텍스트의 가로 길이에 따라 계산
+    var animationDuration = (scrollingTextWidth / containerWidth) * 10;
 
-//     typeEffect(); // 타이핑 효과 시작
-// });
+    // 전체 텍스트에 애니메이션 시간을 적용
+    scrollingText.style.animationDuration = animationDuration + 's';
+
+    // 각 p태그에 animation-delay를 설정하여 애니메이션이 순차적으로 시작되도록 처리
+    var paragraphs = document.querySelectorAll('.scrolling-text p');
+    paragraphs.forEach((p, index) => {
+        var delayTime = index * .3;  // 각 텍스트마다 0.5초씩 지연
+        p.style.animationDelay = delayTime + 's';
+
+        // 애니메이션 종료 후 visibility를 hidden으로 변경
+        p.addEventListener('animationend', function() {
+            p.style.visibility = 'hidden';  // 애니메이션 종료 후 숨기기
+        });
+
+        // 애니메이션이 시작될 때 다시 visible로 되돌리기
+        p.addEventListener('animationstart', function() {
+            p.style.visibility = 'visible'; // 애니메이션 시작 시 보이게 하기
+        });
+    });
+});  
