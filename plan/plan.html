@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>여행 계획</title>
+    <title>오늘 하루, 영화처럼</title>
     <link rel="stylesheet" href="planStyle.css">
-    <script defer src="planScript.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDFLd0WMItotNUnvJA3YwZRv9lpdFnyPs&libraries=places&callback=initMap"></script>
 </head>
 <body>
     <!-- 헤더 영역 -->
     <header>
-        <h1>여행 계획 페이지</h1>
+        <h1>오늘 하루, 영화처럼</h1>
         <nav>
             <ul>
-                <li><a href="../main/main.html">메인 페이지</a></li>
-                <li><a href="../info/info.html">드라마/영화 정보</a></li>
+                <li><a href="../main/main.html">여행 촬영지 지도</a></li>
+                <li>&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+                <li><a href="../info/info.html">드라마/영화 종류</a></li>
             </ul>
         </nav>
     </header>
@@ -25,7 +24,18 @@
     <main>
         <section id="map-section">
             <h2>여행 계획 지도</h2>
-            <div id="map" style="height: 800px;"></div>
+            <div id="map"></div>
+        </section>
+
+        <section id="locType-section">
+            <ul id="locType">
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="cafe">Cafe</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/yellow-dot.png" alt="playground">Playground</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="restaurant">Restaurant</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/purple-dot.png" alt="station">Station</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/orange-dot.png" alt="stay">Stay</li>
+                <li><img src="https://maps.google.com/mapfiles/ms/icons/pink-dot.png" alt="store">Store</li>
+            </ul>
         </section>
     </main>
 
@@ -33,5 +43,9 @@
     <footer>
         <p>&copy; 2024 촬영지 여행 코스 추천.</p>
     </footer>
+
+    <!-- Google Maps API 스크립트: 여기에 실제 API 키를 넣으세요. -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDFLd0WMItotNUnvJA3YwZRv9lpdFnyPs&libraries=places&callback=initMap"></script>
+    <script async defer src="plan.js"></script>
 </body>
 </html>

@@ -175,6 +175,19 @@ nav ul li a:hover {
     color: #333;
 }
 
+/* 그룹 카드 내부의 세부사항 숨기기 */
+.group-card .location-list {
+    display: none;
+}
+
+/* 펼치기 버튼 스타일 */
+.group-card .expand-btn {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+
 .location-list {
     margin-top: 10px;
     padding-left: 20px;

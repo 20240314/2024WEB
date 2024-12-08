@@ -2,7 +2,7 @@ let groupedData = {}; // 전역 변수로 그룹화된 데이터를 저장
 
 // CSV 데이터를 읽어오는 함수
 async function loadLocationData() {
-    const csvFilePath = 'locationData.csv';
+    const csvFilePath = '../main/locationData.csv';
 
     try {
         const response = await fetch(csvFilePath);
@@ -70,16 +70,35 @@ function renderGroupedLocations(groupedData, searchQuery = "") {
             </li>
         `).join("");
 
+        // 그룹 카드의 HTML 구성
         groupCard.innerHTML = `
             <div class="group-header">
                 <img src="${group.posterUrl}" alt="${group.title} 포스터" class="poster-image">
                 <h3>${group.title}</h3>
             </div>
-            <ul class="location-list">
-                ${locationsHtml}
-            </ul>
+            <div class="details-container">
+                <ul class="location-list">
+                    ${locationsHtml}
+                </ul>
+                <span class="expand-btn">펼치기</span>
+            </div>
         `;
         container.appendChild(groupCard);
+
+        // 펼치기 버튼 클릭 이벤트
+        const expandBtn = groupCard.querySelector(".expand-btn");
+        const locationList = groupCard.querySelector(".location-list");
+
+        expandBtn.addEventListener("click", () => {
+            // 세부사항 토글
+            if (locationList.style.display === "none") {
+                locationList.style.display = "block";
+                expandBtn.textContent = "접기";
+            } else {
+                locationList.style.display = "none";
+                expandBtn.textContent = "펼치기";
+            }
+        });
     });
 }
 
