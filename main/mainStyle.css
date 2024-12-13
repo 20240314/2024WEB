@@ -3,10 +3,16 @@
 
 body, html {
     font-family: 'Jua', sans-serif; /* 기본 폰트를 귀여운 폰트로 설정 */
-    background: linear-gradient(135deg, #FFDEE9, #B5FFFC) cover; /* 따뜻한 배경색 */
+    background-color: linear-gradient(to bottom, white, #b0d9df, rgb(240, 198, 240),white) cover;
+    /* background: linear-gradient(135deg, #FFDEE9, #B5FFFC) cover; 따뜻한 배경색 */
     width: 100%;
 }
 
+section {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1000px;
+}
 h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -18,27 +24,27 @@ h1 {
 #map {
     display: block;
     height: 600px;
-    width: 1000px; /* Set to 100% to be responsive */
-    background-color: rgb(211, 211, 211); /* 임시 배경색 (테스트용) */
+    width: 1000px; /* Set to 100% to be responsive */ 
     margin: 0 auto; /* 중앙 정렬 */
 }
 
 #map-section h1{
     font-size: 3rem;
     font-weight: bold;
-    color: #333;
+    color: #715df4;
     text-align: center;
     margin-top: 20px;
 }
 
-#map-section h2, #map-section p {
-    background-color: rgb(2, 50, 69); /* 대비를 위한 약간의 배경 */
+#map-section h2, h5 , #map-section p {
+    background-color: rgb(186, 229, 246); /* 대비를 위한 약간의 배경 */
     padding: 5px; /* 텍스트 주변 여백 추가 */
     border-radius: 4px; /* 둥근 모서리로 디자인 정돈 */
+    margin: 0px;
 }
 
 /* 여행 촬영지 지도, Discover Film Locations 스타일링 */
-#map-section h2 {
+#map-section h2, h5 {
     position: relative;
     font-size: 3rem; 
     font-weight: bold;
