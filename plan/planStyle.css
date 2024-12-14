@@ -1,42 +1,68 @@
 /* Main Content Background */
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap'); /* 귀여운 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap'); 귀여운 폰트
 
 body, html {
     font-family: 'Jua', sans-serif; /* 기본 폰트를 귀여운 폰트로 설정 */
-    background: linear-gradient(135deg, #FFDEE9, #B5FFFC) cover; /* 따뜻한 배경색 */
-    width: 100%;
+    background: linear-gradient(to bottom,  #d0e6e9, white, rgb(228, 223, 241),white) ;
+    /* background: linear-gradient(135deg, #FFDEE9, #B5FFFC) cover; 따뜻한 배경색 */
+    width: 99.5%;
+    height: 135vh;
 }
 
 h1 {
     font-size: 3rem;
     font-weight: bold;
-    color: #1b424f;
+    color: #195a6f;
+    text-shadow: 2px 2px rgba(110, 147, 234, 0.5); /* 그림자 추가 */
     text-align: center;
     margin-top: 20px;
-    text-align: center; /* 중앙 정렬 추가 */
-}
-#map {
-    display: block;
-    height: 600px;
-    width: 1000px; /* Set to 100% to be responsive */
-    background-color: rgb(211, 211, 211); /* 임시 배경색 (테스트용) */
-    margin: 0 auto; /* 중앙 정렬 */
 }
 
-.input-container { margin: 20px; }
+nav {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color:  #c5d9ed;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style: none;   
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a{
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #56779d;    
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.5); /* 그림자 추가 */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #505657;
+}
+
+
+#map {
+    display: block;
+    margin: 0 auto; /* 중앙 정렬 */
+}
 
 #map-section h1{
     font-size: 3rem;
     font-weight: bold;
-    color: #333;
+    color: #BCCCDC;
     text-align: center;
     margin-top: 20px;
 }
 
-#map-section h2, #map-section p {
-    background-color: rgb(2, 50, 69); /* 대비를 위한 약간의 배경 */
+#map-section h2, h4 , #map-section p {
+    background-color: #c5d9ed; /* 대비를 위한 약간의 배경 */
     padding: 5px; /* 텍스트 주변 여백 추가 */
-    border-radius: 4px; /* 둥근 모서리로 디자인 정돈 */
+    margin: 0px;
 }
 
 /* 여행 촬영지 지도, Discover Film Locations 스타일링 */
@@ -44,45 +70,34 @@ h1 {
     position: relative;
     font-size: 3rem; 
     font-weight: bold;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px rgba(70, 75, 221, 0.5); /* 그림자 추가 */
-    margin-bottom: 10px;
+    color: #56779d;
+    text-shadow: 2px 2px rgba(98, 148, 205, 0.5); /* 그림자 추가 */
+    margin-top: 20px;
+    text-align: center; /* 중앙 정렬 추가 */
+}
+
+#map-section h4 {
+    position: relative;
+    font-size: 1.5rem; 
+    font-weight: bold;
+    color: #56779d;
+    text-shadow: 1px 1px rgba(98, 148, 205, 0.5); /* 그림자 추가 */
+    /* color: #84898f;
+    text-shadow: 1px 1px #ffffff; 그림자 추가 */
+    margin-bottom: 50px;
     text-align: center; /* 중앙 정렬 추가 */
 }
 
 #map-section p {
     font-size: 1.2rem; /* 본문 폰트 크기 */
     line-height: 1.5;
-    color: #e8f8f5;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* 그림자 추가 */
+    color: #9AA6B2;
+    text-shadow: 1px 1px #D9EAFD; /* 그림자 추가 */
     font-style: italic; /* 약간 기울여서 스타일 */
     margin-bottom: 15px;
 }
 
-nav {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-}
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a{
-    font-size: 1.5em;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #68dfe7;
-}
 
 #locType-section {
     margin-top: 20px;
@@ -96,15 +111,15 @@ nav ul li a:hover {
 
 button {
     padding: 20px 20px;
-    background-color: #005d5d;
+    background-color: #96a8fa;
     border: none;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     color: white;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #4d79ff;
 }
 
 #locType {

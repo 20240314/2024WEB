@@ -72,17 +72,17 @@ function renderGroupedLocations(groupedData, searchQuery = "") {
 
         // 그룹 카드의 HTML 구성
         groupCard.innerHTML = `
-            <div class="group-header">
-                <img src="${group.posterUrl}" alt="${group.title} 포스터" class="poster-image">
-                <h3>${group.title}</h3>
-            </div>
-            <div class="details-container">
-                <ul class="location-list">
-                    ${locationsHtml}
-                </ul>
-                <span class="expand-btn">펼치기</span>
-            </div>
-        `;
+        <div class="group-header">
+            <h3>${group.title}</h3>
+        </div>
+        <div class="details-container">
+            <ul class="location-list">
+                ${locationsHtml}
+            </ul>
+            <span class="expand-btn">펼치기</span>
+        </div>
+         `;
+    
         container.appendChild(groupCard);
 
         // 펼치기 버튼 클릭 이벤트
@@ -108,10 +108,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const searchBtn = document.getElementById("search-btn");
     const searchInput = document.getElementById("search-input");
+    const resetBtn = document.getElementById("reset-btn");
 
     searchBtn.addEventListener("click", () => {
         const searchQuery = searchInput.value.trim();
         renderGroupedLocations(groupedData, searchQuery);
+    
+        if (searchQuery) {
+            resetBtn.style.display = "inline-block";
+        }
+    });
+
+    resetBtn.addEventListener("click", () => {
+        renderGroupedLocations(groupedData); // 전체 데이터 다시 렌더링
+        searchInput.value = ""; // 검색어 초기화
+        resetBtn.style.display = "none"; // 버튼 숨기기
     });
 
     // Enter 키로 검색
@@ -119,6 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "Enter") {
             const searchQuery = searchInput.value.trim();
             renderGroupedLocations(groupedData, searchQuery);
+        
+            if (searchQuery) {
+                resetBtn.style.display = "inline-block";
+            }
         }
     });
 });
