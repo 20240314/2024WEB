@@ -1,19 +1,18 @@
 /* Main Content Background */
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap'); 귀여운 폰트
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 body, html {
-    font-family: 'Jua', sans-serif; /* 기본 폰트를 귀여운 폰트로 설정 */
-    background: linear-gradient(to bottom,  #d0e6e9, white, rgb(228, 223, 241),white) ;
-    /* background: linear-gradient(135deg, #FFDEE9, #B5FFFC) cover; 따뜻한 배경색 */
+    font-family: 'Jua', sans-serif;
+    background: linear-gradient(to bottom, #d0e6e9, white, rgb(228, 223, 241), white);
     width: 99.5%;
-    height: 135vh;
+    height: 180vh;
 }
 
 h1 {
     font-size: 3rem;
     font-weight: bold;
     color: #195a6f;
-    text-shadow: 2px 2px rgba(110, 147, 234, 0.5); /* 그림자 추가 */
+    text-shadow: 2px 2px rgba(110, 147, 234, 0.5);
     text-align: center;
     margin-top: 20px;
 }
@@ -22,22 +21,22 @@ nav {
     margin: 0;
     display: flex;
     justify-content: center;
-    background-color:  #c5d9ed;
+    background-color: #c5d9ed;
     border-radius: 10px;
 }
 
 nav ul {
-    list-style: none;   
+    list-style: none;
     padding: 0;
     display: flex;
     gap: 30px;
 }
 
-nav ul li a{
+nav ul li a {
     font-size: 1.5em;
     text-decoration: none;
-    color: #56779d;    
-    text-shadow: 2px 2px rgba(255, 255, 255, 0.5); /* 그림자 추가 */
+    color: #56779d;
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
     font-weight: bold;
 }
 
@@ -45,97 +44,111 @@ nav ul li a:hover {
     color: #505657;
 }
 
-
 #map {
     display: block;
-    margin: 0 auto; /* 중앙 정렬 */
+    margin: 0 auto;
 }
 
-#map-section h1{
-    font-size: 3rem;
+#map-section h2{
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #BCCCDC;
+    color: #56779d;
+    text-shadow: 2px 2px rgba(98, 148, 205, 0.5);
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
-#map-section h2, h4 , #map-section p {
-    background-color: #c5d9ed; /* 대비를 위한 약간의 배경 */
-    padding: 5px; /* 텍스트 주변 여백 추가 */
-    margin: 0px;
-}
-
-/* 여행 촬영지 지도, Discover Film Locations 스타일링 */
-#map-section h2 {
-    position: relative;
-    font-size: 3rem; 
+#map-section h4{
+    font-size: 1.7rem;
     font-weight: bold;
     color: #56779d;
-    text-shadow: 2px 2px rgba(98, 148, 205, 0.5); /* 그림자 추가 */
-    margin-top: 20px;
-    text-align: center; /* 중앙 정렬 추가 */
+    text-shadow: 2px 2px rgba(98, 148, 205, 0.5);
+    text-align: center;
+    margin-top: 10px;
 }
 
-#map-section h4 {
-    position: relative;
-    font-size: 1.5rem; 
-    font-weight: bold;
+
+#category-selection, #search-location, #recommendation-results, #travel-time-section {
+    margin: 20px auto;
+    width: 80%;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.5em;
+}
+
+#result-list > li {
+    font-size: 1.3em;
     color: #56779d;
-    text-shadow: 1px 1px rgba(98, 148, 205, 0.5); /* 그림자 추가 */
-    /* color: #84898f;
-    text-shadow: 1px 1px #ffffff; 그림자 추가 */
-    margin-bottom: 50px;
-    text-align: center; /* 중앙 정렬 추가 */
 }
 
-#map-section p {
-    font-size: 1.2rem; /* 본문 폰트 크기 */
-    line-height: 1.5;
-    color: #9AA6B2;
-    text-shadow: 1px 1px #D9EAFD; /* 그림자 추가 */
-    font-style: italic; /* 약간 기울여서 스타일 */
-    margin-bottom: 15px;
+h2 {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 1.4rem;
+    color: #333;
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    margin-right: 10px;
+}
+
+#category-selection div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: center;
 }
 
 
-
-#locType-section {
-    margin-top: 20px;
-}
-
-#filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+input[type="number"], input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(150px);
+    box-sizing: border-box;
 }
 
 button {
-    padding: 20px 20px;
-    background-color: #96a8fa;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    display: block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4a90e2;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 button:hover {
-    background-color: #4d79ff;
+    background-color: #357ABD;
 }
 
-#locType {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 500px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* 약간의 배경색 추가 */
-    padding: 30px;
-    border-radius: 10px;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-#locType li {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 15px;
+li {
+    font-size: 1.2rem;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#travel-time-list p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #56779d;
+    background: #f0f8ff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
 }

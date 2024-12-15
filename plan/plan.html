@@ -26,6 +26,39 @@
             <h4>(여행 계획에 포함시키고 싶은 장소 카테고리의 개수를 선택해주세요.)</h4>
             <div id="map" style="height: 600px; width: 1000px;"></div>
         </section>
+        <section id="search-location">
+            <h2>검색 위치 설정</h2>
+            <p>여행 계획을 시작할 위치를 입력하세요:</p>
+            <div>
+                <label>위치: <input type="text" id="search-location-input" placeholder="예: 서울시청"></label>
+                <button id="set-location-button">위치 설정</button>
+            </div>
+        </section>
+        <section id="category-selection">
+            <h2>여행 코스 추천</h2>
+            <p>카테고리별 장소 개수를 입력하세요 (최대 3개):</p>
+            <div>
+                <label>Cafe: <input type="number" id="cafe-count" min="0" max="3"></label>
+                <label>&ensp;Playground: <input type="number" id="playground-count" min="0" max="3"></label>
+                <label>&ensp;Restaurant: <input type="number" id="restaurant-count" min="0" max="3"></label>
+                <label>Station: <input type="number" id="station-count" min="0" max="3"></label>
+                <label>Stay: <input type="number" id="stay-count" min="0" max="3"></label>
+                <label>Store: <input type="number" id="store-count" min="0" max="3"></label>
+            </div>
+            <button id="recommend-button">추천받기</button>
+        </section>
+                        
+        <section id="recommendation-results">
+            <h2>추천된 장소</h2>
+            <ul id="result-list"></ul>
+        </section>
+        <section id="travel-time-section">
+            <h2>이동 거리 정보(설정위치 기준)</h2>
+            <div id="travel-time-list">
+                <p>이동 시간이 여기에 표시됩니다.</p>
+            </div>
+        </section>
+        
     </main>
 
     <!-- 푸터 영역 -->
