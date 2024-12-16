@@ -1,4 +1,3 @@
-/// Makes an element's :before pseudoelement a FontAwesome icon.
 /// @param {string} $content Optional content value to use.
 /// @param {string} $category Optional category to use.
 /// @param {string} $where Optional pseudoelement to target (before or after).
@@ -37,7 +36,6 @@
 
 }
 
-/// Applies padding to an element, taking the current element-margin value into account.
 /// @param {mixed} $tb Top/bottom padding.
 /// @param {mixed} $lr Left/right padding.
 /// @param {list} $pad Optional extra padding (in the following order top, right, bottom, left)
@@ -58,7 +56,6 @@
 
 }
 
-/// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).
 /// @param {string} $svg SVG data URL.
 /// @return {string} Encoded SVG data URL.
 @function svg-url($svg) {

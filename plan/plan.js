@@ -1,10 +1,9 @@
 let jsonData = [];
 let markers = [];
 let selectedPlaces = [];
-let userLocation = null; // 사용자 위치 저장
-let currentUserMarker = null; // 현재 사용자 위치 마커 저장
+let userLocation = null;
+let currentUserMarker = null; 
 
-// locType별 아이콘 색상 설정
 const markerColors = {
     cafe: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     playground: "https://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
@@ -28,22 +27,19 @@ function updateUserMarker(location, map, title) {
     map.setZoom(14);
 }
 
-// 공통 함수: 결과 초기화
 function clearResults() {
     document.getElementById("result-list").innerHTML = "";
     document.getElementById("travel-time-list").innerHTML = "";
 }
 
-// window.initMap을 글로벌 함수로 정의
 window.initMap = function() {
     const map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 37.5665, lng: 126.9780 }, // 초기 위치 (서울)
+        center: { lat: 37.5665, lng: 126.9780 },
         zoom: 10,
     });
 
     const infowindow = new google.maps.InfoWindow();
 
-    // 사용자 현재 위치 가져오기
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -52,7 +48,6 @@ window.initMap = function() {
                     lng: position.coords.longitude,
                 };
 
-                // 현재 위치에 마커 추가
                 const userMarker = new google.maps.Marker({
                     position: userLocation,
                     map,
@@ -63,12 +58,10 @@ window.initMap = function() {
                 map.setCenter(userLocation);
                 map.setZoom(14);
 
-                // 추천 버튼 활성화
                 document.getElementById("recommend-button").addEventListener("click", () => {
                     recommendCourse(userLocation, map);
                 });
 
-                // 위치 변경 버튼 활성화
                 document.getElementById("set-location-button").addEventListener("click", () => {
                     setSearchLocation(map);
                 });
@@ -82,12 +75,11 @@ window.initMap = function() {
         alert("브라우저가 위치 정보를 지원하지 않습니다. 검색 위치를 입력해주세요.");
     }
 
-    // JSON 데이터를 기반으로 마커 추가
     jsonData.forEach((location) => {
         const markerIcon = markerColors[location.locType] || markerColors["store"];
         const marker = new google.maps.Marker({
             position: { lat: location.lat, lng: location.lng },
-            map: null, // 초기에는 지도에 표시하지 않음
+            map: null, 
             title: location.locName,
             icon: markerIcon,
         });
@@ -101,9 +93,8 @@ window.initMap = function() {
 };
 
 
-// 두 지점 간의 거리를 계산하는 함수 (Haversine Formula)
 function calculateDistance(loc1, loc2) {
-    const R = 6371; // 지구 반경 (km)
+    const R = 6371;
     const dLat = ((loc2.lat - loc1.lat) * Math.PI) / 180;
     const dLng = ((loc2.lng - loc1.lng) * Math.PI) / 180;
     const a =
@@ -113,11 +104,9 @@ function calculateDistance(loc1, loc2) {
             Math.sin(dLng / 2) *
             Math.sin(dLng / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c; // 거리 (km)
+    return R * c;
 }
 
-
-// 여행 코스를 추천하는 함수
 function recommendCourse(userLocation, map) {
     clearResults();
     const categoryCounts = {
@@ -131,9 +120,9 @@ function recommendCourse(userLocation, map) {
 
     selectedPlaces = [];
     const resultList = document.getElementById("result-list");
-    const travelTimeList = document.getElementById("travel-time-list"); // 거리 정보 표시 영역
-    resultList.innerHTML = ""; // 이전 결과 초기화
-    travelTimeList.innerHTML = ""; // 이전 거리 정보 초기화
+    const travelTimeList = document.getElementById("travel-time-list");
+    resultList.innerHTML = ""; 
+    travelTimeList.innerHTML = "";
     const alreadySelectedNames = new Set();
 
     for (const [category, count] of Object.entries(categoryCounts)) {
@@ -178,7 +167,7 @@ function recommendCourse(userLocation, map) {
     }
 }
 
-
+// 코드는 있으나 실제로 사용하고 있지는 않음.
 function calculateTravelTimes(userLocation, places) {
     const resultList = document.getElementById("result-list");
     const service = new google.maps.DistanceMatrixService();
@@ -214,7 +203,6 @@ function calculateTravelTimes(userLocation, places) {
     );
 }
 
-
 function setSearchLocation(map) {
     const geocoder = new google.maps.Geocoder();
     const input = document.getElementById("search-location-input").value;
@@ -224,7 +212,6 @@ function setSearchLocation(map) {
         return;
     }
 
-    // Geocoding API를 사용해 입력된 주소를 좌표로 변환
     geocoder.geocode({ address: input }, (results, status) => {
         if (status === google.maps.GeocoderStatus.OK) {
             const location = results[0].geometry.location;
@@ -237,15 +224,14 @@ function setSearchLocation(map) {
     });
 }
 
-// Google Places API를 통해 장소 세부 정보를 가져오는 함수
 function fetchPlaceDetails(map, marker, location, infowindow) {
     const service = new google.maps.places.PlacesService(map);
     const queryString = `${location.locName}, ${location.address}`;
     console.log("Google Places API 요청 query:", queryString);
 
     const request = {
-        query: queryString, // 장소 이름과 주소를 함께 사용하여 검색
-        fields: ["name", "rating", "formatted_address", "photos", "place_id"] // 필드 확장
+        query: queryString, 
+        fields: ["name", "rating", "formatted_address", "photos", "place_id"]
     };
 
     service.findPlaceFromQuery(request, (results, status) => {
@@ -287,7 +273,6 @@ function fetchPlaceDetails(map, marker, location, infowindow) {
     });
 }
 
-// CSV 데이터를 JSON 형식으로 변환
 function csvToJson(csv) {
     const lines = csv.trim().split("\n");
     const headers = lines[0].split(",");
@@ -305,7 +290,6 @@ function csvToJson(csv) {
     return jsonData;
 }
 
-// CSV 파일을 불러와 JSON 데이터로 변환 후 지도 초기화
 fetch("../main/locationData.csv")
     .then(response => response.text())
     .then(csv => {
@@ -319,7 +303,6 @@ fetch("../main/locationData.csv")
         }));
         console.log("CSV 파일이 JSON으로 변환되었습니다:", jsonData);
 
-        // 지도 초기화
         window.initMap();
     })
     .catch(error => console.error("CSV 파일을 불러오는 중 오류 발생:", error));

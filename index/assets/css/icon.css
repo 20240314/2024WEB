@@ -1,8 +1,5 @@
 .fa-github:before { content: "\f09b"; }
 .fa-arrow-right:before { content: "\f061"; }
-.fa-arrow-circle-right:before{content:"\f0a9";}
-.fa-home:before{content:"\f015";}
-.fa-dribbble:before{content:"\f17d"}
 
 @font-face {
     font-family: "Font Awesome 5 Brands";
